@@ -1,0 +1,11 @@
+/* Import Google fonts */ 
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300&family=Varela+Round&display=swap');
+
+/* Global style */
+
+body {
+    font-family: "Outfit", sans-serif;
+    font-weight: 200;
+    color: #3a3a3a; 
+    background-color: #fcfcfc;
+}
