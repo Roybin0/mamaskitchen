@@ -9,3 +9,10 @@ body {
     color: #3a3a3a; 
     background-color: #fcfcfc;
 }
+
+/* Logo */ 
+
+#logo {
+    height: 80%;
+    width: 80%;
+}
