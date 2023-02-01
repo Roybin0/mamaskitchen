@@ -2,12 +2,52 @@
 {% load static %}
 {% block content %}
 
-<div class="container-fluid g-0">
-    <img id="main-image" src="{% static 'images/set-table.jpeg'%}" alt="Mama's Kitchen table">
-</div>
-<div id="welcome-text">
-    <h3>Welcome to</br>Mama's Kitchen</h3>
-    <p>Quality food at quality prices</p>
-</div>
+<section id="main-image-section">
+    <div class="container-fluid g-0 overflow-hidden position-relative">
+        <img id="main-image" class="w-100 min-vh-400" src="{% static 'images/set-table.jpeg' %}" alt="Mama's Kitchen table">
+    </div>
+    <div id="welcome-text">
+        <h3>Welcome to</br>Mama's Kitchen</h3>
+        <p>Quality food at quality prices</p>
+    </div>
+</section>
+
+<section id="about-us-section">
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2>A WONDERFUL FAMILY FRIENDLY RESTAURANT LOCATED IN THE CENTER OF WEXFORD</h2>
+                <hr>
+                <p>
+                    Mama's Kitchen was founded in 2022 and offers a wide range of quality home-cooked and seasonal
+                    dishes.
+                </p>
+                <p>
+                    Whether it's a special occasion or you fancy a night off cooking, Mama's Kitchen provides everything
+                    you need.
+                </p>
+                <p>
+                    We also cater for special dietary requirements (allergies, coeliacs, lactose intolerance, IBS and
+                    more) - You can note this in your booking and one of our friendly team
+                    will get in touch to discuss your needs further.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="map-section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 map-outer mx-auto">
+                <div class="gmap_canvas">
+                    <iframe id="gmap_canvas"
+                        src="https://maps.google.com/maps?q=47%20south%20main%20street%20wexford&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 {% endblock content %}

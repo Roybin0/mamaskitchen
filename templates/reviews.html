@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<section id="reviews">
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h3><em>See what our customers have to say:</em></h3>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <p class="review-image">
+                    <img src="{% static 'images/5-stars.png' %}" class="img-fluid" alt="">
+                </p>
+                <p class="customer-image">
+
+                </p>
+            </div>
+            <div class="col-12 col-md-4">
+                <p class="review-image">
+                    <img src="{% static 'images/5-stars.png' %}" class="img-fluid" alt="">
+                </p>
+            </div>
+            <div class="col-12 col-md-4">
+                <p class="review-image">
+                    <img src="{% static 'images/5-stars.png' %}" class="img-fluid" alt="">
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
