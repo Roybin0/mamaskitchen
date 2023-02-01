@@ -21,67 +21,73 @@
 
 <body>
 
-    <!-- Navigation -->
+    <!-- Header & Navigation -->
+    
+    <header>
+        <nav class="navbar fixed-top navbar-expand-sm">
+            <div id="nav-container" class="container-fluid">
+                <div class="row align-items-center w-100 justify-content-between">
+                    <div class="col-9 col-sm-2 col-md-3">
+                        <a class="navbar-brand" href="{% url 'home' %}">
+                            <img id="logo" src="{% static 'images/mamas-kitchen-logo.png'%}" alt="Mama's Kitchen">
+                        </a>
+                    </div>      
+                    
+                    <div class="col-3 col-sm-9 col-md-8">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
 
-    <nav class="navbar fixed-top navbar-expand-lg bg-light">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-3 col-sm-12">
-                    <a class="navbar-brand" href="{% url 'home' %}">
-                        <img id="logo" class="" src="{% static 'images/mamas-kitchen-logo.png'%}" alt="Mama's Kitchen">
-                    </a>
-                </div>
-
-                <div class="col align-self-end">
-
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Home</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Menu
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Mains Menu</a></li>
-                                    <li><a class="dropdown-item" href="#">Dessert Menu</a></li>
-                                    <li><a class="dropdown-item" href="#">Drinks Menu</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Book a table</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Sign In/Up</a>
-                            </li>
-                        </ul>
+                        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                            <ul class="navbar-nav me-2 mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'home' %}">Home</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Menus
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Mains Menu</a></li>
+                                        <li><a class="dropdown-item" href="#">Dessert Menu</a></li>
+                                        <li><a class="dropdown-item" href="#">Drinks Menu</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Book a table</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Sign In/Up</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
+    
+    <!-- Main content -->
 
-    <main class="container-fluid">
+    <main>
         {% block content %}
 
         {% endblock content %}
     </main>
 
-    <footer class="g-0 fixed-bottom bg-dark container-fluid text-center">
+    <!-- Footer -->
+
+    <footer class="bg-dark container-fluid text-center">
         <div class="row align-items-center">
             <div class="col-md-6 col-sm-12 text-white mt-2">
                 <p>Contact Us:</br>
                 info@mamaskitchen.com</br>
                 01-1234567</p>
             </div>
-            <div class="col-md-6 col-sm-12 text-white">Follow us: <i class="fab fa-facebook-square ms-3"></i>
+            <div class="col-md-6 col-sm-12 text-white">See our socials: <i class="fab fa-facebook-square ms-3"></i>
                 <i class="fab fa-twitter-square ms-3"></i>
                 <i class="fab fa-instagram-square ms-3"></i>
                 <i class="fab fa-youtube-square ms-3"></i>

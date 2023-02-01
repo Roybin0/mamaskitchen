@@ -1,4 +1,13 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
+
+<div class="container-fluid g-0">
+    <img id="main-image" src="{% static 'images/set-table.jpeg'%}" alt="Mama's Kitchen table">
+</div>
+<div id="welcome-text">
+    <h3>Welcome to</br>Mama's Kitchen</h3>
+    <p>Quality food at quality prices</p>
+</div>
 
 {% endblock content %}
