@@ -17,7 +17,7 @@ TIME_CHOICES = (
 
 class Customer(models.Model):
     name = models.ForeignKey(User, on_delete=models.CASCADE)
-    email = models.EmailField(max_length=100)
+    email = models.EmailField(max_length=100, unique=True)
     phone = models.IntegerField()
 
     def __str__(self):

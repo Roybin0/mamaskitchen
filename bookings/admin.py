@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Booking
+from .models import Booking, Customer
 
 
 @admin.register(Booking)
@@ -13,3 +13,10 @@ class BookingAdmin(admin.ModelAdmin):
 
     def approve_bookings(self, request, queryset):
         queryset.update(confirmed=True)
+
+
+@admin.register(Customer)
+class CustomerAdmin(admin.ModelAdmin):
+
+    list_display = ('name', 'email', 'phone')
+    search_fields = ('name', 'email')
