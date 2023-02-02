@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section id="booking-form-section" class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h3 class="uppercase text-center">Want to book a table?</h3>
+            <h5 class="text-center">Online bookings are available for parties of up to 10 people.</h5>
+            <p class="text-center">If you would like to book a larger table, please contact us directly.</p>
+        
+            <div class="center-form mx-auto">
+                <form action="">
+                    <label for="fullname">Full Name:</label>
+                    <input type="text" name="name" id="fullname" class="form-control" placeholder="Name"
+                        maxlength="50" required />
+
+                    <label for="email">Email Address:</label>
+                    <input type="email" name="email" id="email" class="form-control" placeholder="Email"
+                        required />
+
+                    <label for="phone">Phone No.:</label>
+                    <input type="tel" name="phone" id="phone" class="form-control" required />
+                    
+                    <label for="party">Party Size:</label>
+                    <input type="range" name="party_size" id="party" min="1" max="10" required />
+                    
+                    <label for="date_time">Date & Time:</label>
+                    <input type="datetime-local" name="date_time" id="date_time" required />
+                    
+                    <label for="special_occasion">Special Occasion?:</label>
+                    <input type="checkbox" name="special_occasion" id="occasion" />
+                    
+                    <label for="special_requirements">Special Requirements?:</label>
+                    <input type="checkbox" name="special_requirements" id="requirements" />
+                
+                    <div class="form-row text-center">
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-secondary">Book now!</button>
+                        </div>
+                    </div>
+                
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

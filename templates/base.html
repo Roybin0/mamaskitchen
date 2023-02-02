@@ -15,6 +15,15 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
     <link rel="icon" type="image/png" href="{% static 'images/mamas-kitchen-icon.png' %}">
 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("DX_Uv03oANSKy1cu6");
+            emailjs.send('service_gzuns6x', 'template_7dppfbl', {name: "Text", notes: "I want to book a table"})
+        })();
+    </script>
+
     <title>Mama's Kitchen</title>
 
 </head>
@@ -25,7 +34,7 @@
     
     <header>
         <nav class="navbar fixed-top navbar-expand-sm">
-            <div id="nav-container" class="container-fluid">
+            <div id="nav-container" class="container-fluid bg-nav-container">
                 <div class="row align-items-center w-100 justify-content-between">
                     <div class="col-9 col-sm-2 col-md-3">
                         <a class="navbar-brand" href="{% url 'home' %}">
@@ -46,7 +55,7 @@
                                     <a class="nav-link" href="{% url 'home' %}">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Bookings</a>
+                                    <a class="nav-link" href="{% url 'booking' %}">Bookings</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Reviews</a>
@@ -56,7 +65,7 @@
                                         aria-expanded="false">
                                         Menus
                                     </a>
-                                    <ul class="dropdown-menu">
+                                    <ul class="dropdown-menu bg-dropdown-menu">
                                         <li><a class="dropdown-item" href="#">Mains Menu</a></li>
                                         <li><a class="dropdown-item" href="#">Dessert Menu</a></li>
                                         <li><a class="dropdown-item" href="#">Drinks Menu</a></li>
