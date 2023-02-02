@@ -18,7 +18,7 @@ h1, h2 {
     font-size: 250%;
 }
 
-/* Site Background Colours */ 
+/* Site Colours */ 
 
 .bg-nav-container {
     background-color: #FE8E3A;
@@ -26,6 +26,18 @@ h1, h2 {
 
 .bg-dropdown-menu {
     background-color: rgba(33, 37, 42, 0.9);
+}
+
+.bg-welcome-text {
+    background-color: rgba(33, 37, 42, 0.6);
+}
+
+.white-text {
+    color: #fcfcfc;
+}
+
+.dark-text {
+    color: #3a3a3a;
 }
 
 /* Logo */ 
@@ -48,7 +60,6 @@ h1, h2 {
 /* Main image */ 
 
 #main-image {
-    padding-top: 90px;
     position: relative;
     min-height: 400px;
 }
@@ -57,12 +68,9 @@ h1, h2 {
     width: 300px;
     height: 150px;
 
-    background-color: rgba(33, 37, 42, 0.6);
-    color: #fcfcfc;
-    text-align: center;
     padding-top: 25px;
 
-    bottom: 60%;
+    bottom: 72%;
     left: 15%;
     position: absolute;
     
@@ -93,10 +101,14 @@ h1, h2 {
 
 /* Booking Form */ 
 
+.center-form {
+    width: 60%;
+}
+
 button[type="submit"] {
-    color: #3a3a3a;
     background-color: #FE8E3A;
 }
+
 
 /*  Media Queries */ 
 
@@ -106,10 +118,11 @@ button[type="submit"] {
     #welcome-text {
         width: 250px;
         height: 125px;
-        bottom: 62%;
         left: 15%;
         padding-top: 20px;
     }
+
+
 }
 
 /* Small screens - up to 576px */ 
@@ -123,4 +136,9 @@ button[type="submit"] {
         padding-top: 15px;
         font-size: 90%;
     }
+
+    .center-form {
+        width: 90%;
+    }
+
 }

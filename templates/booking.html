@@ -1,41 +1,46 @@
 {% extends "base.html" %}
 {% block content %}
+{% load crispy_forms_tags %}
 
-<section id="booking-form-section" class="container-fluid">
+<section id="booking-form-section" class="container-fluid pt-3">
     <div class="row">
-        <div class="col-12">
+        <div class="col-12 col-md-8 offset-md-2">
             <h3 class="uppercase text-center">Want to book a table?</h3>
             <h5 class="text-center">Online bookings are available for parties of up to 10 people.</h5>
             <p class="text-center">If you would like to book a larger table, please contact us directly.</p>
         
-            <div class="center-form mx-auto">
-                <form action="">
-                    <label for="fullname">Full Name:</label>
-                    <input type="text" name="name" id="fullname" class="form-control" placeholder="Name"
+            <div class="center-form mx-auto p-3">
+                <form method="post" onsubmit="return sendMail(this)" class="needs-validation">
+                    {% csrf_token %}
+                    <label class="p-2" for="name">Full Name:</label>
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Name"
                         maxlength="50" required />
 
-                    <label for="email">Email Address:</label>
+                    <label class="p-2" for="email">Email Address:</label>
                     <input type="email" name="email" id="email" class="form-control" placeholder="Email"
                         required />
 
-                    <label for="phone">Phone No.:</label>
+                    <label class="p-2" for="phone">Phone No.:</label>
                     <input type="tel" name="phone" id="phone" class="form-control" required />
                     
-                    <label for="party">Party Size:</label>
-                    <input type="range" name="party_size" id="party" min="1" max="10" required />
+                    <label class="p-2" for="party">Party Size:</label>
+                    <input type="number" name="party_size" id="party" min="1" max="10" required /><br>
                     
-                    <label for="date_time">Date & Time:</label>
-                    <input type="datetime-local" name="date_time" id="date_time" required />
+                    <label class="p-2" for="date">Date:</label>
+                    <input type="date" name="date" id="date" required /><br>
+
+                    <label class="p-2" for="time">Time:</label>
+                    <input type="time" name="time" id="time" required /><br>
                     
-                    <label for="special_occasion">Special Occasion?:</label>
-                    <input type="checkbox" name="special_occasion" id="occasion" />
+                    <label class="p-2" for="special_occasion">Special Occasion?:</label>
+                    <input type="checkbox" name="special_occasion" id="occasion" /><br>
                     
-                    <label for="special_requirements">Special Requirements?:</label>
-                    <input type="checkbox" name="special_requirements" id="requirements" />
-                
+                    <label class="p-2" for="special_requirements">Special Requirements?:</label>
+                    <input type="checkbox" name="special_requirements" id="requirements" /><br>
+
                     <div class="form-row text-center">
                         <div class="col-12">
-                            <button type="submit" class="btn btn-secondary">Book now!</button>
+                            <button type="submit" class="btn btn-secondary dark-text">Book now!</button>
                         </div>
                     </div>
                 
