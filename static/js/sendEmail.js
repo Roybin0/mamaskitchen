@@ -8,6 +8,7 @@ function sendMail(bookingForm) {
         "time": bookingForm.time.value,
         "special_occasion": bookingForm.special_occasion.value,
         "special_requirements": bookingForm.special_requirements.value,
+        "id": bookingForm.id.value,
     })
     .then(
         function(response) {

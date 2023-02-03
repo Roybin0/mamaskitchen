@@ -24,7 +24,8 @@ h1, h2 {
 
 /* Site Colours */ 
 
-.bg-nav-container {
+.bg-nav-container,
+.bg-message {
     background-color: #FE8E3A;
 }
 

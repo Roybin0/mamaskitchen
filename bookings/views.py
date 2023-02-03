@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.views import generic, View
+from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from django.contrib import messages
-from .models import Booking, Customer
+from .models import Booking
 from .forms import BookingForm
 
 
@@ -12,41 +12,6 @@ def home(request):
 
 def thankyou(request):
     return render(request, 'thankyou.html')
-
-
-# def booking(request):
-#     if request.method == 'GET':
-#         return render(request, 'booking.html')
-
-#     if request.method == 'POST':
-#         if isSpaceAvailable(request.POST.get('time')) < 40:
-#             booking_form = Booking()
-#             booking_form.name = request.POST.get('name')
-#             booking_form.email = request.POST.get('email')
-#             booking_form.phone = request.POST.get('phone')
-#             booking_form.party_size = request.POST.get('party_size')
-#             booking_form.date = request.POST.get('date')
-#             booking_form.time = request.POST.get('time')
-#             if request.POST.get('special_occasion') == 'on':
-#                 booking_form.special_occasion == 'True'
-#             else:
-#                 booking_form.special_occasion == 'False'
-#             if request.POST.get('special_occasion') == 'on':
-#                 booking_form.special_requirements == 'True'
-#             else:
-#                 booking_form.special_requirements == 'False'
-#             booking_form.confirmed = False
-#             booking_form.save()
-
-#             customer = Customer()
-#             customer.name = request.POST.get('name')
-#             customer.email = request.POST.get('email')
-#             customer.phone = request.POST.get('phone')
-#             customer.save()
-
-#             return render(request, 'thankyou.html')
-#         else:
-#             return render(request, 'booking.html')
 
 
 def booking(request):
@@ -81,7 +46,13 @@ def isSpaceAvailable(date, time):
     return availableSeats
 
 
-# def edit_booking(request, email):
-#     booking = get_object_or_404(Booking, email=email)
-#     if request.method == 'POST':
-#         form = BookingForm()
+def edit_booking(request, booking_id):
+    booking = get_object_or_404(Booking, id=booking_id)
+    if request.method == 'POST':
+        form = BookingForm(request.POST, instance=booking)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+        form = BookingForm(instance=booking)
+    return render(request, 'edit-booking.html', {'edit_form': form})

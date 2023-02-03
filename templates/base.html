@@ -45,7 +45,7 @@
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                             aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
+                            <span class="navbar-toggler-icon right"></span>
                         </button>
 
                         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
@@ -72,7 +72,7 @@
                                 </li>
                                 {% if user.is_authenticated %}
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Edit Booking</a>
+                                    <a class="nav-link" href="{% url 'edit-booking' %}">Edit Booking</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
@@ -82,7 +82,7 @@
                                     <a class="nav-link" href="{% url 'account_login' %}">Login</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'account_signup' %}">Create account</a>
+                                    <a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a>
                                 </li>
                                 {% endif %}
                             </ul>
@@ -92,6 +92,20 @@
             </div>
         </nav>
     </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible fade show bg-message margin-header pt-3 border border-5 border-dark" 
+                    id="msg" role="alert">
+                        {{ message | safe }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 
     <!-- Main content -->
 
