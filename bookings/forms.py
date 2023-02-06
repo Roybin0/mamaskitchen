@@ -7,7 +7,7 @@ class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
         fields = ['name', 'email', 'phone', 'party_size', 'date', 'time',
-                  'special_occasion', 'special_requirements', 'id']
+                  'special_occasion', 'special_requirements',]
 
 
 class SignupForm(SignupForm):
