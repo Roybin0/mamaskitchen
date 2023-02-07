@@ -32,6 +32,7 @@
     <!-- Header & Navigation -->
 
     <header>
+
         <nav class="navbar navbar-expand-sm fixed-top">
             <div id="nav-container" class="container-fluid bg-nav-container">
                 <div class="row align-items-center w-100 justify-content-between">
@@ -65,15 +66,14 @@
                                         Menus
                                     </a>
                                     <ul class="dropdown-menu bg-dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Mains Menu</a></li>
-                                        <li><a class="dropdown-item" href="#">Dessert Menu</a></li>
+                                        <li><a class="dropdown-item" href="#">Dining Menu</a></li>
                                         <li><a class="dropdown-item" href="#">Drinks Menu</a></li>
                                     </ul>
                                 </li>
                                 {% if user.is_authenticated %}
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'edit-booking' %}">Edit Booking</a>
-                                </li>
+                                    <a class="nav-link" href="{% url 'enter_ref' %}">Edit Booking</a>
+                                </li> 
                                 <li class="nav-item">
                                     <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                                 </li>
@@ -93,9 +93,11 @@
         </nav>
     </header>
 
+    <!-- Messages -->
+
     <div class="container">
         <div class="row">
-            <div class="col-md-8 offset-md-2">
+            <div class="col-md-6 offset-md-6 pt-3">
                 {% for message in messages %}
                 <div class="alert {{ message.tags }} alert-dismissible fade show bg-message margin-header pt-3 border border-5 border-dark" 
                     id="msg" role="alert">
@@ -117,7 +119,7 @@
 
     <!-- Footer -->
 
-    <footer class="bg-dark container-fluid text-center fixed-bottom">
+    <footer id="footer" class="bg-dark container-fluid text-center fixed-bottom">
         <div class="row align-items-center p-3">
             <div class="col-12 col-md-4 text-center text-white">
                 <a href="#" class="text-white">Contact Us</a> | <a href="#" class="text-white">Privacy Policy</a>     

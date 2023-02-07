@@ -26,7 +26,7 @@ def create_booking_ref():
 
 
 class Booking(models.Model):
-    name = models.CharField(max_length=50, primary_key=True)
+    name = models.CharField(max_length=50)
     email = models.EmailField(max_length=100)
     phone = models.IntegerField()
     party_size = models.PositiveSmallIntegerField(
@@ -43,8 +43,8 @@ class Booking(models.Model):
     booking_ref = models.CharField(
         max_length=8,
         blank=True,
-        editable=False,
         unique=True,
+        primary_key=True,
         default=create_booking_ref
         )
     confirmed = models.BooleanField(default=False)

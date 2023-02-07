@@ -112,7 +112,7 @@ h1, h2 {
 /* Booking Form */ 
 
 .center-form {
-    width: 70%;
+    width: 60%;
     margin-bottom: 100px;
 }
 
@@ -138,11 +138,6 @@ button[type="submit"] {
         margin-bottom: 150px;
     }
 
-    .center-form {
-        width: 70%;
-        margin-bottom: 100px;
-    }
-
 }
 
 /* Small screens - up to 576px */ 
@@ -151,15 +146,12 @@ button[type="submit"] {
     #welcome-text {
         width: 200px;
         height: 110px;
-        bottom: 65%;
-        left: 15%;
         padding-top: 15px;
         font-size: 90%;
     }
 
     .center-form {
         width: 90%;
-        margin-bottom: 100px;
     }
 
 }

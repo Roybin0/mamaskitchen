@@ -4,15 +4,28 @@
 
 <section id="edit-booking-section">
     <div class="row">
-        <div class="col-12 col-md-6 offset-md-3">
-            {% if user.is_authenticated%}
-                <form method="POST">
-                    {% csrf token %}
+        <div class="col-12 col-md-6 offset-md-3 margin-header text-center">
+            <h2>Update/Cancel Your Booking</h2>
+            <p>To amend your booking, please fill out the form below.</br>
+            To cancel your booking, please click the "Cancel Booking" button below.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="center-form mx-auto p-3">
+                <form method="POST" class="needs-validation">
+                    {% csrf_token %}
                     {{ edit_form | crispy }}
+                    <div class="form-row text-center">
+                        <div class="col-12 p-3">
+                            <button type="submit" class="btn btn-secondary dark-text">Update Booking</button>
+                            <button type="submit" class="btn btn-secondary dark-text">Cancel Booking</button>
+                        </div>
+                    </div>
                 </form>
-            {% endif %}
+            </div>
         </div>
     </div>
 </section>
 
-{% endblock content %}
+{% endblock %}

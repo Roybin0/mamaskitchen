@@ -46,8 +46,12 @@ def isSpaceAvailable(date, time):
     return availableSeats
 
 
-def edit_booking(request, booking_id):
-    booking = get_object_or_404(Booking, id=booking_id)
+def enter_ref(request):
+    return render(request, 'booking-reference.html')
+
+
+def edit_booking(request, booking_ref):
+    booking = get_object_or_404(Booking, booking_ref=booking_ref)
     if request.method == 'POST':
         form = BookingForm(request.POST, instance=booking)
         if form.is_valid():
