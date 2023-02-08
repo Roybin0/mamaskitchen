@@ -22,10 +22,15 @@ h1, h2 {
     margin-top: 100px;
 }
 
+.margin-bottom {
+    margin-bottom: 100px;
+}
+
 /* Site Colours */ 
 
 .bg-nav-container,
-.bg-message {
+.bg-message,
+.bg-menu-header {
     background-color: #FE8E3A;
 }
 
@@ -120,6 +125,11 @@ button[type="submit"] {
     background-color: #FE8E3A;
 }
 
+/* Menu */ 
+
+.menu-course-header {
+    padding-left: 10px;
+}
 
 /*  Media Queries */ 
 
@@ -146,6 +156,7 @@ button[type="submit"] {
     #welcome-text {
         width: 200px;
         height: 110px;
+        bottom: 65%;
         padding-top: 15px;
         font-size: 90%;
     }

@@ -21,9 +21,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", views.home, name='home'),
     path('booking/', include("bookings.urls"), name='booking'),
-    path('edit-booking', views.enter_ref, name='enter_ref'),
+    path('edit-booking', include("bookings.urls"), name='enter_ref'),
     path('edit-booking/<booking_ref>',
          views.edit_booking, name='edit-booking'),
     path('thanks/', views.thankyou, name='thankyou'),
+    path('menu', views.menu, name='menu'),
     path('accounts/', include('allauth.urls')),
 ]
