@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator, MaxValueValidator
-from datetime import datetime
+from datetime import datetime, date
 import random
 
 
@@ -36,7 +36,11 @@ class Booking(models.Model):
             MinValueValidator(1)
         ]
     )
-    date = models.DateField(default=datetime.now)
+    date = models.DateField(
+        default=datetime.now,
+        validators=[
+            MinValueValidator(date.today())
+        ])
     time = models.CharField(max_length=10, choices=TIME_CHOICES)
     special_occasion = models.BooleanField(default=False)
     special_requirements = models.BooleanField(default=False)

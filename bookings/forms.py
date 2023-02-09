@@ -8,7 +8,13 @@ class BookingForm(forms.ModelForm):
         model = Booking
         fields = ['name', 'email', 'phone', 'party_size', 'date', 'time',
                   'special_occasion', 'special_requirements', 'booking_ref',]
-        widgets = {'booking_ref': forms.HiddenInput()}
+        widgets = {'booking_ref': forms.HiddenInput(),
+                   'date': forms.DateInput(
+                    format=('%d/%m/%Y'),
+                    attrs={'class': 'form-control',
+                           'placeholder': 'Select a date',
+                           'type': 'date'}
+                    )}
 
 
 class SignupForm(SignupForm):
