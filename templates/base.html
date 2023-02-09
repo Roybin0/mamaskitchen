@@ -98,7 +98,7 @@
         <div class="row">
             <div class="col-md-8 offset-md-2 pt-3">
                 {% for message in messages %}
-                <div class="alert {{ message.tags }} alert-dismissible fade show bg-message margin-header pt-3 border border-dark" 
+                <div class="alert {{ message.tags }} alert-dismissible fade show bg-message pt-2 border border-dark" 
                     id="msg" role="alert">
                         {{ message | safe }}
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -121,7 +121,7 @@
     <footer id="footer" class="bg-dark container-fluid text-center fixed-bottom">
         <div class="row align-items-center p-3">
             <div class="col-12 col-md-4 text-center text-white">
-                <a href="#" class="text-white">Contact Us</a> | <a href="#" class="text-white">Privacy Policy</a>     
+                <a href="{% url 'contact' %}" class="text-white">Contact Us</a> | <a href="{% url 'privacy' %}" class="text-white">Privacy Policy</a>     
             </div>
             <div class="col-12 col-md-4 text-center text-white">
                 See our socials: <i class="fab fa-facebook-square ms-3"></i>

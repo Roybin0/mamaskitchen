@@ -18,6 +18,18 @@ def cancelled(request):
     return render(request, 'cancelled.html')
 
 
+def menu(request):
+    return render(request, 'menu.html')
+
+
+def privacy(request):
+    return render(request, 'privacy.html')
+
+
+def contact(request):
+    return render(request, 'contact.html')
+
+
 def booking(request):
 
     if request.method == 'POST':
@@ -80,5 +92,6 @@ def delete_booking(request, booking_ref):
     return render(request, 'cancel-confirmation.html', {'booking': booking})
 
 
-def menu(request):
-    return render(request, 'menu.html')
+
+
+

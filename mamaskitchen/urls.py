@@ -29,5 +29,7 @@ urlpatterns = [
     path('cancelled', views.cancelled, name='cancelled'),
     path('thanks/', views.thankyou, name='thankyou'),
     path('menu', views.menu, name='menu'),
+    path('privacy-policy', views.privacy, name='privacy'),
+    path('contact', views.contact, name='contact'),
     path('accounts/', include('allauth.urls')),
 ]

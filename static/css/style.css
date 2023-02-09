@@ -25,18 +25,24 @@ h1, h2 {
 /* Site Colours */ 
 
 .bg-nav-container,
-.bg-message,
-.bg-menu-header,
-.bg-orange {
+.bg-menu-list {
     background-color: #FE8E3A;
 }
 
+.bg-message {
+    background-color: #fcfcfc;
+}
+
 .bg-dropdown-menu {
-    background-color: rgba(33, 37, 42, 0.9);
+    background-color: rgba(33, 37, 42, 0.8);
 }
 
 .bg-welcome-text {
     background-color: rgba(33, 37, 42, 0.6);
+}
+
+.bg-menu-header {
+    background-color: rgba(33, 37, 42, 0.5);
 }
 
 .white-text {
@@ -111,12 +117,6 @@ h1, h2 {
 
 button[type="submit"] {
     background-color: #FE8E3A;
-}
-
-/* Menu */ 
-
-.menu-course-header {
-    padding-left: 10px;
 }
 
 /*  Media Queries */ 
