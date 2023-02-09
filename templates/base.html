@@ -32,8 +32,7 @@
     <!-- Header & Navigation -->
 
     <header>
-
-        <nav class="navbar navbar-expand-sm fixed-top">
+        <nav class="navbar navbar-expand-sm">
             <div id="nav-container" class="container-fluid bg-nav-container">
                 <div class="row align-items-center w-100 justify-content-between">
                     <div class="col-9 col-sm-2 col-md-3">
@@ -67,7 +66,8 @@
                                     </a>
                                     <ul class="dropdown-menu bg-dropdown-menu">
                                         <li><a class="dropdown-item" href="{% url 'booking' %}">New Booking</a></li>
-                                        <li><a class="dropdown-item" href="{% url 'enter_ref' %}">Edit Booking</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'enter_ref_edit' %}">Edit Booking</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'enter_ref_delete' %}">Cancel Booking</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item">
@@ -94,9 +94,9 @@
 
     <!-- Messages -->
 
-    <div class="container">
+    <div class="container-fluid bg-nav-container">
         <div class="row">
-            <div class="col-md-5 offset-md-7 pt-2">
+            <div class="col-md-8 offset-md-2 pt-3">
                 {% for message in messages %}
                 <div class="alert {{ message.tags }} alert-dismissible fade show bg-message margin-header pt-3 border border-dark" 
                     id="msg" role="alert">

@@ -18,4 +18,4 @@ function changeFooter(screen_size) {
     } 
 }
   
-changeFooter(medium_screen)
+// changeFooter(medium_screen)

@@ -14,6 +14,10 @@ def thankyou(request):
     return render(request, 'thankyou.html')
 
 
+def cancelled(request):
+    return render(request, 'cancelled.html')
+
+
 def booking(request):
 
     if request.method == 'POST':
@@ -46,8 +50,8 @@ def isSpaceAvailable(date, time):
     return availableSeats
 
 
-def enter_ref(request):
-    return render(request, 'booking-reference.html')
+def enter_ref_edit(request):
+    return render(request, 'edit-booking-reference.html')
 
 
 def edit_booking(request, booking_ref):
@@ -60,6 +64,20 @@ def edit_booking(request, booking_ref):
     else:
         form = BookingForm(instance=booking)
     return render(request, 'edit-booking.html', {'edit_form': form})
+
+
+def enter_ref_delete(request):
+    return render(request, 'delete-booking-reference.html')
+
+
+def delete_booking(request, booking_ref):
+    booking = get_object_or_404(Booking, booking_ref=booking_ref)
+
+    if request.method == 'POST':
+        booking.delete()
+        return redirect('cancelled')
+
+    return render(request, 'cancel-confirmation.html', {'booking': booking})
 
 
 def menu(request):

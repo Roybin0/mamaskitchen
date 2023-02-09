@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section id="cancellation-confirmation-section" class="margin-header">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 pt-3 text-center">
+            <h3>Are you sure you want to cancel your booking?</h3>
+            <p class="pt-3">Your current booking details:</p>
+            <div class="table-responsive">
+                <table class="table table-borderless align-middle">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Booking reference:</td>
+                            <td><strong>{{ booking.booking_ref }}</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Booking name:</td>
+                            <td><strong>{{ booking.name }}</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Number of guests:</td>
+                            <td><strong>{{ booking.party_size }}</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Date of booking:</td>
+                            <td><strong>{{ booking.date }}</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Time of booking:</td>
+                            <td><strong>{{ booking.time }}</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        
+            <form action="" method="post" class="center-form mx-auto">
+                {% csrf_token %}
+                <button type="submit" value="Delete" class="btn btn-secondary bg-orange dark-text">Cancel Now</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

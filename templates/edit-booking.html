@@ -2,9 +2,9 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
-<section id="edit-booking-section">
-    <div class="row">
-        <div class="col-12 col-md-6 offset-md-3 margin-header text-center">
+<section id="edit-booking-section" class="container-fluid">
+    <div class="row pt-3">
+        <div class="col-12 col-md-6 offset-md-3 text-center">
             <h2>Update/Cancel Your Booking</h2>
             <p>To amend your booking, please fill out the form below.</br>
             To cancel your booking, please click the "Cancel Booking" button below.</p>
@@ -18,11 +18,17 @@
                     {{ edit_form | crispy }}
                     <div class="form-row text-center">
                         <div class="col-12 p-3">
-                            <button type="submit" class="btn btn-secondary dark-text">Update Booking</button>
-                            <button type="submit" class="btn btn-secondary dark-text">Cancel Booking</button>
+                            <button type="submit" id="update" class="btn btn-secondary dark-text">Update Booking</button>
                         </div>
                     </div>
                 </form>
+                <p class="text-center mt-3">Cancel my booking: 
+                    <form onsubmit="window.open('/cancel-booking/' + booking_ref.value)" method="POST" class="text-center">
+                        {% csrf_token %}
+                        {{ booking | crispy }}
+                        <button type="submit" class="btn btn-secondary dark-text">Cancel Booking</button>
+                    </form>
+                </p>
             </div>
         </div>
     </div>
