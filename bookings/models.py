@@ -26,7 +26,7 @@ def create_booking_ref():
 
 
 class Booking(models.Model):
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, null=False)
     email = models.EmailField(max_length=100)
     phone = models.IntegerField()
     party_size = models.PositiveSmallIntegerField(
@@ -57,10 +57,10 @@ class Booking(models.Model):
         return f"Booking request from {self.name} for {self.party_size} people"
 
 
-class Customer(models.Model):
-    name = models.ForeignKey(User, on_delete=models.PROTECT)
-    email = models.EmailField(max_length=100, unique=True)
-    phone = models.IntegerField()
+# class Customer(models.Model):
+#     name = models.ForeignKey(User, on_delete=models.PROTECT)
+#     email = models.EmailField(max_length=100, unique=True)
+#     phone = models.IntegerField()
 
-    def __str__(self):
-        return self.customer.name
+#     def __str__(self):
+#         return self.customer.name
