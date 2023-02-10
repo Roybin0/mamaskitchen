@@ -1,0 +1,140 @@
+/* Import Google fonts */ 
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Unbounded:wght@200;400;600&display=swap');
+
+/* Global style */
+
+body {
+    font-family: "Itim", sans-serif;
+    font-weight: 200;
+    color: #3a3a3a; 
+    background-color: #fcfcfc;
+}
+
+h1, h2 {
+    font-family: "Itim", sans-serif;
+}
+
+.large-text {
+    font-size: 250%;
+}
+
+.margin-bottom {
+    margin-bottom: 100px;
+}
+
+/* Site Colours */ 
+
+.bg-nav-container,
+.bg-menu-list {
+    background-color: #FE8E3A;
+}
+
+.bg-message {
+    background-color: #fcfcfc;
+}
+
+.bg-dropdown-menu {
+    background-color: rgba(33, 37, 42, 0.8);
+}
+
+.bg-welcome-text {
+    background-color: rgba(33, 37, 42, 0.6);
+}
+
+.bg-menu-header {
+    background-color: rgba(33, 37, 42, 0.5);
+}
+
+.white-text {
+    color: #fcfcfc;
+}
+
+.dark-text {
+    color: #3a3a3a;
+}
+
+.orange-text {
+    color: #FE8E3A;
+}
+
+/* Logo */ 
+
+#logo {
+    height: 100px;
+    width: 150px;
+}
+
+/* Header & Navigation */ 
+
+.navbar {
+    padding: 0;
+}
+
+.dropdown-item {
+    color: #fcfcfc;
+}
+
+/* Main image */ 
+
+#main-image {
+    position: relative;
+    /* min-height: 400px; */
+}
+
+#welcome-text {    
+    /* Animation on loading */ 
+
+    animation-name: welcome-text-zoom;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes welcome-text-zoom {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+/* Google Map */ 
+
+#gmap_canvas {
+    overflow: hidden;
+    height: 264px;
+    width: 80%;
+    margin-bottom: 100px;
+}
+
+/* Booking Form */ 
+
+.center-form {
+    width: 60%;
+    margin-bottom: 100px;
+}
+
+button[type="submit"] {
+    background-color: #FE8E3A;
+}
+
+/*  Media Queries */ 
+
+/* Medium screens - up to 768px */ 
+@media screen and (max-width: 768px) {
+
+    #gmap_canvas {
+        margin-bottom: 150px;
+    }
+
+}
+
+/* Small screens - up to 576px */ 
+@media screen and (max-width: 576px) {
+
+    .center-form {
+        width: 90%;
+    }
+
+}
