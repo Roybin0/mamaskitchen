@@ -59,11 +59,3 @@ class Booking(models.Model):
     def __str__(self):
         return f"Booking request from {self.name} for {self.party_size} people"
 
-
-# class Customer(models.Model):
-#     name = models.ForeignKey(User, on_delete=models.PROTECT)
-#     email = models.EmailField(max_length=100, unique=True)
-#     phone = models.IntegerField()
-
-#     def __str__(self):
-#         return self.customer.name
