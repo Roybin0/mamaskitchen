@@ -53,6 +53,9 @@ class Booking(models.Model):
         )
     confirmed = models.BooleanField(default=False)
 
+    class Meta:
+        ordering = ["-date"]
+
     def __str__(self):
         return f"Booking request from {self.name} for {self.party_size} people"
 
